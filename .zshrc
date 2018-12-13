@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="avit"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,16 +66,15 @@ plugins=(
   git
   archlinux
   zsh-autosuggestions
+  alias-tips
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -101,11 +100,23 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom environment variables
 export usb=/mnt/usb
+export PATH=$PATH:/home/jordan/.scripts/:/home/jordan/.gem/ruby/2.5.0/bin
 
 # Actions
-alias sz="source ~/.zshrc"
+alias sz="source ~/.zshrc && echo Sourcing .zshrc"
 alias cz="vim ~/.zshrc && source ~/.zshrc"
-
+alias t="task"
+alias ta="task add"
+alias tr="task done"
+alias tl="task list"
+alias cb="vim $HOME/.config/bspwm/bspwmrc"
+alias cs="vim ~/.config/sxhkd/sxhkdrc"
+alias cpb="vim ~/.config/polybar/config"
+alias cpbl="vim ~/.config/polybar/launch.sh"
+alias g="git"
+alias gp="git push"
+alias gc="git commit"
+alias cv="vim ~/.vimrc"
 # Directory Movement
 alias csca="$usb/School/CS140/Assignments"
 alias csja="$usb/School/CS105/Assignments"
@@ -113,4 +124,3 @@ alias d="$HOME/Downloads"
 alias dc="$HOME/Documents"
 alias dd="$Home/Desktop"
 alias p="$HOME/Pictures"
-
