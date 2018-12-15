@@ -5,6 +5,9 @@
 # reload bspwm
 alt + shift + R
         $HOME/.config/bspwm/bspwmrc
+
+alt + shift + ctrl +  P
+  $HOME/.config/polybar/launch.sh
 # terminal emulator
 alt + Return
         xfce4-terminal 
@@ -33,9 +36,16 @@ alt + n
 #
 # bspwm hotkeys
 #
+alt + button{1-3}
+  bspc pointer -g {move,resize_side,resize_corner}
 
+alt + !button{1-3}
+  bspc pointer -t %i, %i
+
+alt + @button{1-3}
+  bspc pointer -u
 # quit bspwm normally
-alt + alt + Escape
+super + alt + Escape
 	bspc quit
 
 # close and kill
@@ -105,16 +115,16 @@ alt + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-#alt + ctrl + {h,j,k,l}
-#	bspc node -p {west,south,north,east}
+alt + ctrl + {Left,Right,Up,Down}
+	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-#alt + ctrl + {1-9}
-#	bspc node -o 0.{1-9}
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-#alt + ctrl + space
-#	bspc node -p cancel
+alt + ctrl + space
+	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 #alt + ctrl + shift + space
