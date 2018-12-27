@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+ #If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -117,6 +117,8 @@ alias g="git"
 alias gp="git push"
 alias gc="git commit"
 alias cv="vim ~/.vimrc"
+alias nf="neofetch --ascii_distro arch --gtk2 off --gtk3 off"
+
 # Directory Movement
 alias csca="$usb/School/CS140/Assignments"
 alias csja="$usb/School/CS105/Assignments"

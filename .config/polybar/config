@@ -30,7 +30,7 @@ alert = #F07178
 monitor = HDMI1
 width = 10%
 height = 27
-offset-x = 93.5%
+offset-x = 83.5%
 offset-y = 3px
 radius = 8.0px
 background = $(colors.background}
@@ -67,7 +67,7 @@ content =█
 
 [bar/example]
 monitor = HDMI1 
-width = 21%
+width = 21.5%
 height = 27
 offset-x = 38.5%
 offset-y = 3px
@@ -85,7 +85,8 @@ border-color = #00000000
 
 padding-left = 0
 padding-right = 0 
-
+padding-bottom = 0
+padding-top = 0
 font-0 = Sans-Regular:size=10;0
 font-1 = MaterialIcons:size=10;0
 font-2 = Siji:size=10;0
@@ -95,8 +96,8 @@ font-5 = "Font Awesome 5 Free Solid:style=Solid:size=10;3"
 font-6 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
 
 module-margin-left = 1
-module-margin-right = 2
-modules-left = bspwm date
+module-margin-right = 0
+modules-left = bspwm date 
 modules-center = 
 modules-right = 
 

@@ -15,7 +15,13 @@ alt + Return
 # program launcher
 {Super_L,Super_R}
 	rofi -modi drun -show drun -show-icons
-
+# Volume Control
+alt + Up
+  pactl set-sink-volume 0 +3%
+alt + Down
+  pactl set-sink-volume 0 -3%
+alt + shift + m
+  pactl set-sink-mute 0 toggle
 
 # make sxhkd reload its configuration files:
 alt + Escape
@@ -25,7 +31,8 @@ alt + e
   ~/.scripts/dmenuunicode
 # music commands
 alt + p
-  playerctl play-pause && notify-send -u normal -i /usr/share/spotify/icons/spotify_icon.ico "⏯  Music $(playerctl status)"
+  playerctl play-pause;  
+  notify-send -u normal "⏯  Music $(playerctl status)"
 
 alt + b
   playerctl previous
@@ -49,7 +56,7 @@ super + alt + Escape
 	bspc quit
 
 # close and kill
-alt + {_,shift + }w
+alt + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
