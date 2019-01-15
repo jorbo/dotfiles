@@ -1,4 +1,6 @@
 set -U fish_greeting
+kitty + complete setup fish | source
+
 # Actions
 alias t="task"
 alias ta="task add"
@@ -24,5 +26,3 @@ alias d="$HOME/Downloads"
 alias dc="$HOME/Documents"
 
 alias p="$HOME/Pictures"
-
-
