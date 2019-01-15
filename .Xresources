@@ -1,4 +1,5 @@
-##### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
+#
+### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
 ##### CHANGES DONE TO THIS FILE MANUALLY MAY AFFECT THE FUNCTIONALITY ######
 ##### PROCEED WITH CAUTION! #####
 
@@ -39,7 +40,7 @@ URxvt*transparent:       false
 URxvt*depth: 32
 URxvt.background: [85]#2f1e2e
 
-URxvt.font: xft:Inconsolata for Powerline:pixelsize=16
+URxvt.font: xft:Terminus:pixelsize=20,xft:Font\ Awesome\ 5\ Brands:pixelsize=20
 URxvt.letterSpace: 0
 
 *antialias:  true
