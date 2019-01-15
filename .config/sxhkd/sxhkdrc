@@ -11,7 +11,7 @@ alt + shift + ctrl +  P
  bash $HOME/.config/polybar/launch.sh
 # terminal emulator
 alt + Return
-       kitty 
+       urxvt 
   
 # program launcher
 {Super_L,Super_R}
@@ -33,7 +33,7 @@ alt + e
 
 # Open File Manager (Ranger)
 alt + r
-  kitty --session ranger
+  urxvt -e 'ranger'
 
 # music commands
 alt + p
