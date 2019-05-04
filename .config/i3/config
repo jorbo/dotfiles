@@ -208,6 +208,6 @@ bindsym $mod+shift+equal exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+shift+- exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 
-
+# Action Bindings
 bindsym $mod+ctrl+shift+p exec ~/.config/polybar/launch.sh
 
