@@ -77,8 +77,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -205,9 +205,10 @@ bindsym $mod+b exec playerctl previous
 bindsym $mod+minus exec /home/jordan/.scripts/pulse.sh lower
 bindsym $mod+plus exec /home/jordan/.scripts/pulse.sh raise
 bindsym $mod+shift+equal exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $mod+shift+- exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
+bindsym $mod+shift+minus exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # Action Bindings
 bindsym $mod+ctrl+shift+p exec ~/.config/polybar/launch.sh
-
+bindsym $mod+shift+f exec urxvt -e ranger
+bindsym $mod+e exec ~/.scripts/dmenuunicode
+bindsym --release ctrl+Print exec scrot -s 

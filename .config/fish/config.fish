@@ -1,5 +1,5 @@
 set -U fish_greeting
-kitty + complete setup fish | source
+set -gx SECRET_KEY 3^R8fXcd^wTy
 
 # Actions
 alias t="task"
@@ -20,6 +20,10 @@ alias nf="neofetch --ascii_distro arch --gtk2 off --gtk3 off"
 alias autostart="sudo ln -s /usr/share/applications/$1.desktop /etc/xdg/autostart/"
 alias se="ls /usr/share/applications/ | grep $1"
 alias install="pikaur -S --noconfirm"
+alias docker="sudo docker"
+alias docker-compose="sudo docker-compose"
+alias update="pikaur -Syu --noconfirm"
+alias install="pikaur --noconfirm -S"
 # Directory Movement
 alias csca="$usb/School/CS140/Assignments"
 alias csja="$usb/School/CS105/Assignments"
