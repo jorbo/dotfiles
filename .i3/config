@@ -1,3 +1,4 @@
+# vi: ft=i3config
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -35,8 +36,8 @@ bindsym $mod+Shift+q kill
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+
+
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -45,7 +46,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 #exec --no-startup-id volumeicon
 ##bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
@@ -64,9 +65,9 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+#bindsym Print exec --no-startup-id i3-scrot
+#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -110,8 +111,8 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -134,8 +135,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+#bindsym $mod+Ctrl+Right workspace next
+#bindsym $mod+Ctrl+Left workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -150,16 +151,16 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-workspace $ws1 output HDMI-1
-workspace $ws2 output HDMI-1
-workspace $ws3 output HDMI-1
-workspace $ws4 output HDMI-2
-workspace $ws5 output HDMI-2
-workspace $ws6 output HDMI-2
-workspace $ws7 output HDMI-2
-workspace $ws8 output HDMI-2
-workspace $ws9 output HDMI-2
-workspace $ws10 output HDMI-2
+workspace $ws1 output HDMI-2
+workspace $ws2 output HDMI-2
+workspace $ws3 output HDMI-2
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output DP-1
+workspace $ws7 output DP-1
+workspace $ws8 output DP-1
+workspace $ws9 output DP-1
+workspace $ws10 output DP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -257,12 +258,13 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec_always --no-startup-id nitrogen --restore
+exec  compton -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+#exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
@@ -391,17 +393,18 @@ mode "$mode_gaps_outer" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
+
 }
 # Autostart
 exec_always --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id dex -a
-#exec urxvtd
-exec syncthing
+exec urxvtd
+exec thunderbird
 exec_always ~/.config/polybar/launch.sh
 exec_always ~/.screenlayout/default.sh
 exec_always feh --bg-scale /home/jordan/Pictures/backgrounds/wallhaven-704123.jpg
 # WM_CLASS(STRING) = "Instance" "Class"
-for_window [class="parsecd"] move window to workspace $ws3; fullscreen on
+for_window [class="parsecd"] move window to workspace $ws3; fullscreen on; floating disable
 for_window [class="Firefox"] move window to workspace $ws4
 for_window [instance="discord"] move window to workspace $ws5
 for_window [class="Spotify"] move window to workspace $ws5
@@ -409,6 +412,12 @@ for_window [class="Virt-manager" instance="virt-manager"] move container to work
 for_window [class="Slack" instance="slack"] move window to workspace $ws6
 for_window [class="moonlight" instance="moonlight"] move window to workspace $ws3
 for_window [class="moonlight" instance="Moonlight"] move window to workspace $ws3
+for_window [class="Unity" instance="Unity"] move container to workspace $ws1
+for_window [class="Thunderbird" instance="Mail"] move window to workspace $ws7
+for_window [class="java-lang-Thread"] move window to workspace $ws1
+for_window [class="jetbrains-clion"] move window to workspace $ws1
+
+exec_always --no-startup-id "i3-msg 'workspace 5; append_layout /home/jordan/.i3/workspace-5.json'"
 # Custom Bindings
 
 # Music Bindings
@@ -423,10 +432,10 @@ bindsym $mod+shift+minus exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # Action Bindings
 bindsym $mod+ctrl+shift+p exec ~/.config/polybar/launch.sh
 bindsym $mod+shift+f exec urxvt -e ranger
-bindsym $mod+e exec ~/.scripts/dmenuunicode
-bindsym --release ctrl+Print exec scrot -s -e 'imgurbash2 $f && mv $f ~/Pictures/Screenshots && notify-send Screenshots saved to ~/Pictures/Screenshots'
+bindsym $mod+e exec ~/.scripts/emoji_rofi.sh
+bindsym --release ctrl+Print exec scrot -s -e 'imgurbash2 $f && mv $f ~/Pictures/Screenshots' && notify-send 'Screenshot saved to ~/Pictures/Screenshots'
 bindsym $mod+ctrl+s exec zsh --exec source /home/jordan/.scripts/switch-output.sh
 bindsym Super_L exec rofi -modi drun -show drun -show-icons Adiwaita -theme gruvbox-dark-hard
-
-for_window [class=".*"] border pixel 5
-
+bindsym $mod+ctrl+l exec ~/.screenlayout/laptop.sh
+#for_window [class=".*"] border pixel 5
+for_window [class="mpv" instance="mpv"] floating enable;

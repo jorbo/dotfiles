@@ -1,0 +1,46 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Jimmy Eat World - Get It Faster",
+    "percent": 0.4,
+    "swallows": [
+       {
+       // "class": "^Spotify$",
+       // "instance": "^spotify$",
+       // "title": "^Jimmy\\ Eat\\ World\\ \\-\\ Get\\ It\\ Faster$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1080,
+       "width": 945,
+       "x": 2884,
+       "y": 58
+    },
+    "name": "#goblin-den - Discord",
+    "percent": 0.6,
+    "swallows": [
+       {
+       // "class": "^discord$",
+       // "instance": "^discord$",
+       // "title": "^\\#goblin\\-den\\ \\-\\ Discord$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+

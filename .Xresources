@@ -33,11 +33,11 @@ URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
-
+Rxvt*shading: 15
 URxvt*depth: 32
 URxvt.background: [90]#1d2021
 
-URxvt.font: xft:TerminessTTF Nerd Font Mono:pixelsize=20;xtf:emojione:pixelsize=5;
+URxvt.font: xft:TerminessTTF Nerd Font Mono:pixelsize=20;xtf:emojione:pixelsize=5;xft:PowerLineSymbols:pixelsize=20;
 URxvt.letterSpace: 0
 
 *antialias:  true
